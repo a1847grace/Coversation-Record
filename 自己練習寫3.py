@@ -3,17 +3,14 @@ def 讀取檔案(filename):
 	records = []
 	with open(filename, 'r', encoding='utf-8-sig') as f:
 		for line in f:
-			records.append(line.strip())
+			records.append(line.strip().split(' '))
 	return records
 
 #處理檔案
 def 處理檔案(records):
 	處理後檔案 = []
 	for line in records:
-		if line[5:9] == 'Alle':
-			處理後檔案.append(line[5:10])
-		else:
-			處理後檔案.append(line[5:9])
+		處理後檔案.append(line[0][5:])
 	print (處理後檔案)
 
 
